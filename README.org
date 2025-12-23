@@ -3,9 +3,11 @@
 
 The Proton Pass command line interface in GUIX.
 
-If session is connected to keyring then ~PROTON_PASS_KEY_PROVIDER=keyring~ then default behavior is expected.
+If session is connected to kernel keyring (i.e. ~PROTON_PASS_KEY_PROVIDER~ = ~keyring~) then [[https://protonpass.github.io/pass-cli/][documentation]] on use can be followed directly.
  
-If no keyring is set then ~PROTON_PASS_KEY_PROVIDER~ must be set to ~fs~ or ~env~ as per the [[https://protonpass.github.io/pass-cli/get-started/configuration/][documentation]]. Useful for containers but *not* secure.
+If you have no kernel keyring capabilities then ~PROTON_PASS_KEY_PROVIDER~ must be set to ~fs~ or ~env~ as per the [[https://protonpass.github.io/pass-cli/get-started/configuration/][documentation]]. Useful for containers but *not* secure.
+
+For info on keyring access see [[*Keyring access][keyring access]].
 
 ** Installation
 Working on adding package channel but currently depends on nonguix binary-build-system.
@@ -29,10 +31,11 @@ If ~PROTON_PASS_KEY_PROVIDER~ is not set and it cannot access keyring you will g
       1: Could not get local key from keyring
       2: Error accessing keyring: No matching entry found in secure storage
 #+end_src
-
+*** Keyring access
 To start a session with access to keyring you must have [[https://packages.guix.gnu.org/packages/keyutils/1.6.3/][keyutils]] installed.
 Then launch a session with keyring available and then login
 #+begin_src bash
   keyctl session -l
   pass-cli login
 #+end_src
+
