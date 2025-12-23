@@ -1,0 +1,7 @@
+(channel
+  (version 0)
+  (url "git@github.com:jw2249a/guix-protonpass-cli.git")
+  (dependencies
+      (channel
+       (name 'nonguix)
+       (url "https://gitlab.com/nonguix/nonguix"))))
