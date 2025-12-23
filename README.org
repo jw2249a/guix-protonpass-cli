@@ -7,7 +7,7 @@ If session is connected to kernel keyring (i.e. ~PROTON_PASS_KEY_PROVIDER~ = ~ke
  
 If you have no kernel keyring capabilities then ~PROTON_PASS_KEY_PROVIDER~ must be set to ~fs~ or ~env~ as per the [[https://protonpass.github.io/pass-cli/get-started/configuration/][documentation]]. Useful for containers but *not* secure.
 
-For info on keyring access see [[*Keyring access][keyring access]].
+For info on keyring access see [[#keyring-access][keyring access]].
 
 ** Installation
 Working on adding package channel but currently depends on nonguix binary-build-system.
