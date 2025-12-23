@@ -1,0 +1,29 @@
+#+TITLE:     Proton Pass CLI Beta in Guix
+#+AUTHOR:    Jack R. Williams
+
+I have not gotten this to work with kernel keyring in guix, but can confirm both env and fs keyrings work set via ~PROTON_PASS_KEY_PROVIDER~ env var following the [[https://protonpass.github.io/pass-cli/get-started/configuration/][documentation]].
+
+Useful for containers but *not* secure.
+
+** Installation
+Working on adding package channel but currently depends on nonguix binary-build-system.
+
+Can be installed via
+#+begin_src bash
+  guix install -L /path/to/git/repository protonpass-cli
+#+end_src
+
+** Usage
+To login use:
+#+begin_src bash
+  pass-cli login
+#+end_src
+If ~PROTON_PASS_KEY_PROVIDER~ is not set and it cannot access keyring you will get:
+#+begin_src sh
+    Error: Error creating client features
+
+    Caused by:
+      0: Failed to get encryption key for database
+      1: Could not get local key from keyring
+      2: Error accessing keyring: No matching entry found in secure storage
+#+end_src
