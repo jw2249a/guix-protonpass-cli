@@ -1,7 +1,9 @@
 #+TITLE:     Proton Pass CLI Beta in Guix
 #+AUTHOR:    Jack R. Williams
 
-I have not gotten this to work with kernel keyring in guix, but can confirm that if session is connected to keyring then ~PROTON_PASS_KEY_PROVIDER=keyring~ will work
+The Proton Pass command line interface in GUIX.
+
+If session is connected to keyring then ~PROTON_PASS_KEY_PROVIDER=keyring~ then default behavior is expected.
  
 If no keyring is set then ~PROTON_PASS_KEY_PROVIDER~ must be set to ~fs~ or ~env~ as per the [[https://protonpass.github.io/pass-cli/get-started/configuration/][documentation]]. Useful for containers but *not* secure.
 
